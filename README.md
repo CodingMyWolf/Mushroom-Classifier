@@ -3,7 +3,7 @@ A simple mushroom classification web application for E222
 
 ## Designer
 
- - Matteo Vidali (mvidali@iu.edu)[mvidali@iu.edu]
+ - Matteo Vidali [mvidali@iu.edu](mvidali@iu.edu)
 
 ## Functionality
 
