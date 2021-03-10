@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  version: 0.0-oas3
+  title: mushroomClassifier 
+  description: >-
+	An application to identify mushrooms by appearence as edible or nonedible.
+  termsOfService: 'http://swagger.io/terms/'
+  contact: mvidali@iu.edu
+    name: Cloudmesh REST Service Example
+  license:
+    name: Apache
+paths:
+  /permissions:
+    get:
+      tags:
+        - Permissions
+      summary: ask for permissions to store data
+      operationId: <GET PERMISSIONS FUNCITON>
+      responses:
+        '200':
+          description: 'Permissions required: <MORE ON PERMISSIONS>'
+        
+  /predict/<data>:
+    post:
+      tags:
+        - Upload
+      summary: Upload appearance info 
+      operationId: <UPLOAD FUNCTION HERE>
+      parameters:
+        - name: data 
+          in: query
+          description: filename to be uploaded 
+          required: true
+          schema:
+            type: string #want this to be a csv formatted string could also be a file -- not sure how yet 
+      responses:
+        '405':
+          description: Invalid input
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+    get:
+      tags:
+        - Download
+      summary: Download the fillout form 
+      operationId: <DOWNLOAD FUNCTION HERE> 
+      responses:
+        '405':
+          description: Invalid input
+  /info:
+    get:
+      tags:
+        - Info 
+      operationId: <INFO FUNC HERE> 
+      description: Prints info and how to use this application 
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
+
+  /upload/<photo>:
+    post:
+      tags:
+        - Picture
+      summary: Upload a picture
+      operationId: <UPLOAD PHOTO FUNC HERE>
+      parameters:
+        - name: photo
+        in: query
+        description: photo of the given input
+        required: true
+        schema:
+          type: imagefile #not sure how to lable this for now... want it to be an image upload 
+      responses:
+        '403':
+          description: File too large, compress
+        '405':
+          description: Invalid input
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  file:
+                    type: imagefile
+                    format: imageformat
+
