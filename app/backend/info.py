@@ -5,6 +5,6 @@ BP='../forms'
 
 def show():
    
-  with open(os.path.join(BP,'info.txt'), 'r') as f:
+  with open(os.path.join(BP,'info.yml'), 'r') as f:
 
     return jsonify(f.read()) 

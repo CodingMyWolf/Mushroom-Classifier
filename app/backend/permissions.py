@@ -1,2 +1,2 @@
 def ask():
-  pass
+  return("PERMISSIONS HERE")
