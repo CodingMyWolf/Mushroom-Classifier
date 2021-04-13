@@ -6,8 +6,7 @@ from flask import send_file
 F_UP_F='../predict' # Form upload folder
 I_UP_F='../img_data'
 SERVER_DATABASE='../forms' # Form Download Folder
-UPLOAD_FOLDER='../uplaod'
-
+UPLOAD_FOLDER = './../uploads'
 def upload_form(data):
     f = request.files['file']
     f.save(os.path.join(UPLOAD_FOLDER, 'predict.txt'))
@@ -23,3 +22,4 @@ def upload2():
 
 if __name__ == "__main__":
   print(predict.get_file('../tests/form_FULL.txt'))
+  print(UPLOAD_FOLDER)
