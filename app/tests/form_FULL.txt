@@ -1,0 +1,4 @@
+odor:a 
+gill-size:b 
+bruises:t 
+
