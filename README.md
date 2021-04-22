@@ -9,7 +9,9 @@ A simple mushroom classification web application for E222
 
 This project will become a web application with the following functions
 
- - [ ] Classify mushrooms by physical appearence
+ - [x] Classify mushrooms by physical appearence
+ - [x] Make an info page
+ - [x] make a prediction endpoint
  - [ ] Give statistics of varieties of mushrooms
  - [ ] Accpet permissions to take in data given by user
  - [ ] take a photo upload of the mushroom and append it with the written data of the mushroom
