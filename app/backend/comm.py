@@ -8,6 +8,7 @@ I_UP_F='../img_data'
 SERVER_DATABASE='../forms' # Form Download Folder
 UPLOAD_FOLDER = './../uploads'
 def upload_form(data):
+
     f = request.files['file']
     f.save(os.path.join(UPLOAD_FOLDER, 'predict.txt'))
     p = predict.get_file(os.path.join(UPLOAD_FOLDER, 'predict.txt'))
@@ -18,7 +19,11 @@ def download(data):
     return send_file(path, as_attachment=True)
 
 def upload2():
-  pass
+    f = request.files['file']
+    f.save(os.path.join(UPLOAD_FOLDER, 'file'))
+    p = predict.get_file(os.path.join(UPLOAD_FOLDER, 'file'))
+    return "it is done" 
+
 
 if __name__ == "__main__":
   print(predict.get_file('../tests/form_FULL.txt'))

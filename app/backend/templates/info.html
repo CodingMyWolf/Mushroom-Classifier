@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> Mushroom Classifier Application</title>
+  <h2> Mushroom Classifier Application</h2>
+  <h3> By: Matteo Vidali </h3>
+</head>
+
+<body>
+
+  <p> Below are the instructions to using this appliction </p>
+  <br> Make a get request to the prediction endpoint to get a fillout form.<br> 
+  The template of this form may varyover time, but for now it has three featurs.<br> 
+  More endpoints may be added in the future, with varying levels of accuracy.<br> 
+  You can parse the following list of options for how to fill out the form.<br> 
+  You will use the one letter code which best describes the feature of the<br> 
+  mushroom to be classified:<br>
+  <em> (The emboldened features are the current ones in the fillout form) </em>
+<br>
+<br>
+options:
+
+
+  cap-shape: ["bell=b, conical=c, convex=x,"
+             "flat=f, knobbed=k,sunken=s"]<br>
+
+  cap-surface: [fibrous=f, grooves=g, scaly=y, smooth=s]<br>
+
+
+  cap-color: ["brown=n, buff=b, cinnamon=c, gray=g, green=r,"
+             "pink=p, purple=u, red=e, white=w, yellow=y"]<br>
+
+<b>  bruises: ["yes=t, no=f"]</b> <br>
+
+<b>  odor: ["almond=a, anise=l, creosote=c, fishy=y, foul-f,"
+        "musty=m, none=n, pungent=p, spicy=s"]</b><br>
+
+<b> gill-size: ["broad=b, narrow=n"] </b> <br>
+
+  gill-attachment: ["attached=a, descending=d, free=f, notched=n"]<br>
+
+  gill-spacing: ["close=c, crowded=w, distant=d"]<br>
+
+  stalk-shape: ["enlarging=e, tapering=t"]<br>
+  
+  stalk-root: ["bulbous=b, club=c, cup=u, equal=e, rhizomorphs=z,"
+               "rooted=r, missing=?"]<br>
+
+  stalk-surface-above-ring: ["fibrous=f, scaly=y, silky=k, smooth=s"]<br>
+
+  stalk-surface-below-ring: ["fibrous=f, scaly=y, silky=k, smooth=s"]<br>
+
+  stalk-color-above-ring: ["brown=n, buff=b, cinnamon=c, gray=g, green=r,"
+                           "pink=p, purple=u, red=e, white=w, yellow=y"]<br>
+                           
+  stalk-color-below-ring: ["brown=n, buff=b, cinnamon=c, gray=g, green=r,"
+                           "pink=p, purple=u, red=e, white=w, yellow=y"]<br>
+                           
+  veil-type: ["partial=p, universal=u"]<br>
+
+  veil-color: ["brown=n, orange=o, white=w, yellow=y"]<br>
+
+  ring-number: ["none=n, one=o, two=t"]<br>
+  
+  ring-type: ["cobwebby=c, evanescent=e, flaring=f, large=l, none=n,"
+              "pendant=p, sheathing=s, zone=z"]<br>
+
+  spore-print-color: ["black=b, brown=n, buff=b, chocolate=h, green=r,"
+                      "orange=o, purple=u, white=w, yellow=y"]<br>
+
+  population: ["abundant=a, clustered=c, numerous=n, scattered=s, several=v, solitary=y"]<br>
+
+  habitat: ["grasses=g, leaves=l, meadows=m, paths=p, urban=u, waste=w, woods=d"]<br>
+</body>
+</html>
