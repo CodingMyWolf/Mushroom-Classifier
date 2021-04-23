@@ -8,6 +8,7 @@ info:
     name: Cloudmesh REST Service Example
   license:
     name: Apache
+
 paths:
   /permissions:
     get:
@@ -18,8 +19,18 @@ paths:
       responses:
         '200':
           description: 'Permissions required: <MORE ON PERMISSIONS>'
-        
-  /predict/<data>:
+
+  /classify/<bruises>/<odor>/<gillSize>:
+    get:
+      tags:
+        - Permissions
+      summary: ask for permissions to store data
+      operationId: predict.classify
+      responses:
+        '200':
+          description: 'Permissions required: <MORE ON PERMISSIONS>'
+
+  /predict/<dat>:
     post:
       tags:
         - Upload
@@ -29,7 +40,7 @@ paths:
         - name: data 
           in: query
           description: filename to be uploaded 
-          required: true
+          required: true 
           schema:
             type: string #want this to be a csv formatted string could also be a file -- not sure how yet 
       responses:
@@ -52,32 +63,37 @@ paths:
       responses:
         '405':
           description: Invalid input
-  /info:
-    get:
-      tags:
-        - Info 
-      operationId: info.show
-      description: Prints info and how to use this application 
-      responses:
-        '200':
-          description: 'CPU info, or add more text'
 
   /upload/<photo>:
     post:
       tags:
-        - Picture
+        - Upload 
       summary: Upload a picture
-      operationId: comm.upload2
+      operationId: comm.upload_photo
       parameters:
         - name: photo
           in: query
           description: photo of the given input
           required: true
           schema:
-            type: object #not sure how to lable this for now... want it to be an image upload 
+            type: string #not sure how to lable this for now... want it to be an image upload 
 
       responses:
         '403':
           description: File too large, compress
         '405':
           description: Invalid input
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+
+servers:
+  - url: 'http://localhost:8080/mc'
+
+

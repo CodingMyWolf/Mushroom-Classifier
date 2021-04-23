@@ -8,12 +8,12 @@ docker-all: docker-build docker-start
 
 docker-build:
 	@echo "building the image from docker file..."
-	docker build --no-cache --pull -t name:mushroom_classifier
+	docker build --no-cache --pull -t mvidali:mushroom_classifier .
 	@echo "image DONE"
 
 docker-start:
 	@echo "starting the NEW service in container..."
-	docker run  -p 8080:8080 tbalson/cpu
+	docker run  -p 8080:8080 mvidali:mushroom_classifier
 
 service:
 	@echo "creating the service..."
@@ -24,7 +24,7 @@ start:
 	@echo "starting the NEW service..."
 	pip3 install --upgrade pip
 	pip3 install -r requirements.txt
-	python server.py
+	python3 app/backend/server.py
 
 docker-stop:
 	@echo "stoping the service..."
@@ -33,7 +33,7 @@ docker-stop:
 
 docker-remove:
 	@echo "removing the image..."
-	docker rmi -f tbalson/cpu
+	docker rmi -f mvidali/mushroom_classifier
 	@echo "image removed"
 
 docker-clean: docker-stop docker-remove
