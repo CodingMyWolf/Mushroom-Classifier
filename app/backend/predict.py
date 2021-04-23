@@ -33,7 +33,7 @@ def get_file(path):
   return [[x_d[x], y_d[y], z_d[z]]]
 
 def classify(bruises, odor, gillSize): 
-  x_d = {'a':0, 'c':1, 'f':2, 'l':3, 'm':4, 'n':5, 'p':6, 's':7}
+  x_d = {'a':0, 'c':1, 'f':2, 'l':3, 'm':4, 'n':5, 'p':6, 's':7 'y':8}
   y_d = {'n':1, 'b':0}
   z_d = {'t':1, 'f':0}
 
